@@ -113,3 +113,55 @@ or the program is largely incomplete.
 #       -If course is not specified the function will return a dictionary with, as keys, all the courses that the students have
 #        (mathematics and computing in this example, but there could be more) and as value the mean across the list students.
 #       - If course is specified, the function will return the mean for that specific course across the list of students.
+
+
+class Student: 
+ 
+ 
+    def __init__(self): 
+        self.courses = {}
+        self.grade = None
+
+    def add_course(self, course_name, year, grade):
+        
+        self.courseDetails = {}
+        self.course_name = course_name
+        self.year = year 
+        self.grade = grade
+        
+
+        if course_name in self.courses: 
+            print(f"Do you want to change the existing course {course_name}?")
+            if input() == "yes" or "y": 
+                if grade is None: 
+                    print("Specify the grade for this course please!")
+                    if input() == "no" or "n":
+                        pass
+                    elif input() == tuple:
+                        grade = input()
+                        self.courseDetails["Year"] = year
+                        self.courseDetails["Grade"] = None
+                    else: 
+                        print("Specify the grade for this course please!")
+                else: 
+                    self.courseDetails["Year"] = year
+                    self.courseDetails["Grade"] = grade 
+            elif input() == "no" or "n":
+                pass
+            else: 
+                print(f"Do you want to change the existing course {course_name}?")
+        else: 
+            self.courseDetails["Year"] = year
+            self.courseDetails["Grade"] = grade
+            self.courses[course_name] = self.courseDetails
+    
+        print(self.courses)    
+
+Paul = Student()
+Paul.add_course("Computing" , 1, 68.4)
+Paul.add_course("Mathematics", 1, 85.6)
+Paul.add_course("Computing", 1, 53.3)
+
+
+                
+
