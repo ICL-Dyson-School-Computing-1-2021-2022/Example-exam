@@ -116,52 +116,45 @@ or the program is largely incomplete.
 
 
 class Student: 
- 
- 
-    def __init__(self): 
-        self.courses = {}
-        self.grade = None
 
-    def add_course(self, course_name, year, grade):
+    #def __init__(self):
+    #    self.courses = {}
         
-        self.courseDetails = {}
+
+    def __init__(self, course_name, year, grade):
+
         self.course_name = course_name
         self.year = year 
-        self.grade = grade
-        
-
-        if course_name in self.courses: 
-            print(f"Do you want to change the existing course {course_name}?")
+        self.grade = None
+        self.grade = grade 
+    
+    def add_course(self): 
+        if self.course_name in self.courses: 
+            print(f"Do you want to change the existing course {self.course_name}?")
             if input() == "yes" or "y": 
-                if grade is None: 
-                    print("Specify the grade for this course please!")
+                if self.grade == None: 
+                    print(f"What is your grade for {self.course_name} in year {self.year}?")
                     if input() == "no" or "n":
                         pass
-                    elif input() == tuple:
-                        grade = input()
-                        self.courseDetails["Year"] = year
-                        self.courseDetails["Grade"] = None
+                    elif input() is tuple: 
+                        self.grade = input()
+                        self.courses[self.course_name] = {"Year": self.year, "Grade": self.grade}
                     else: 
-                        print("Specify the grade for this course please!")
-                else: 
-                    self.courseDetails["Year"] = year
-                    self.courseDetails["Grade"] = grade 
-            elif input() == "no" or "n":
-                pass
+                        pass
+                else:
+                    self.courses[self.course_name] = {"Year": self.year, "Grade": self.grade}
             else: 
-                print(f"Do you want to change the existing course {course_name}?")
+                pass
         else: 
-            self.courseDetails["Year"] = year
-            self.courseDetails["Grade"] = grade
-            self.courses[course_name] = self.courseDetails
-    
-        print(self.courses)    
+            self.courses[self.course_name] = {"Year": self.year, "Grade": self.grade}
+        
+        print(self.courses)
 
-Paul = Student()
-Paul.add_course("Computing" , 1, 68.4)
-Paul.add_course("Mathematics", 1, 85.6)
-Paul.add_course("Computing", 1, 53.3)
+
+Paul = Student("Computing", 1 , 89.2)
+
+
+
 
 
                 
-
