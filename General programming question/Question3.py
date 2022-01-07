@@ -42,11 +42,27 @@ or the program is largely incomplete.
 
 def merge_sentences(string1, string2):
 
-        split1 = string1.split()
-        split2 = string2.split()
-    
+    a = string1.split()
+    b = string2.split()
 
-    return pass
+    if len(a) == len(b):
+
+        newList = []
+
+        for i in range(0, len(a)): 
+            newList.append(a[i])
+            newList.append(b[i])
+
+        newString = ""
+
+        for element in newList: 
+            newString = newString + " " + element
+    
+    else: 
+        print("The strings are of differnt lengths")
+        return None
+
+    return newString
 
 string1 = "the cow jumped over the moon"
 string2 = "jack and jill went up the"
