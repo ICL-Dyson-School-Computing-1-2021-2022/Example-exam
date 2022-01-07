@@ -40,6 +40,31 @@ or the program is largely incomplete.
 # Example2: input = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb" output = True (the two numbers sum to 10)
 # weight = 8
 
-def question_mark():
+def question_mark(input1):
+
+    list1 = ["0","1","2","3","4","5","6","7","8","9"]
+    elementList = list(input1)
+    
+    
+        
+        
+
+
+   
+
     return 
+
+input1 = "sdfhdsl4??sfasdfga?1sdjkfhbdsjhfkb"
+input2 = "sdfhdsl4??sfasdfga?6sdjkfhbdsjhfkb"
+
+
+
+
+
+
+    
+
+
+
+
 
