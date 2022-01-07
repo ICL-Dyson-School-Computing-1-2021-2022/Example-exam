@@ -117,8 +117,8 @@ or the program is largely incomplete.
 
 class Student: 
 
-    #def __init__(self):
-    #    self.courses = {}
+    def __init__(self):
+        self.courses = {}
         
 
     def __init__(self, course_name, year, grade):

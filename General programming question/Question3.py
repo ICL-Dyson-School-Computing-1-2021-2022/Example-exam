@@ -40,5 +40,15 @@ or the program is largely incomplete.
 #       returns 'the jack cow and jumped jill over went the up moon the'
 # weight = 3
 
-def merge_sentences():
-    return 
+def merge_sentences(string1, string2):
+
+        split1 = string1.split()
+        split2 = string2.split()
+    
+
+    return pass
+
+string1 = "the cow jumped over the moon"
+string2 = "jack and jill went up the"
+
+print(merge_sentences(string1, string2))
