@@ -47,8 +47,49 @@ or the program is largely incomplete.
 # in which case the function would return True, if the character was "a" and false otherwise.
 # weight = 15
 
-def find_letter():
-    return
+def find_letter(myList, char):
+
+    count = 0
+    for count,i in enumerate(myList): 
+        #print(i)
+        sublist = list(myList[count])
+        length = len(sublist)
+
+        index = 0
+        for index,j in enumerate(sublist): 
+            #print(index, j)
+            if str(j) == char: 
+                row = count
+                column = index
+                if (column + 1) < length and str(myList[row][column + 1]) == char:
+                    print(myList[row][column + 1])
+                    switch = True 
+                    if (row + 1) < length and str(myList[row + 1][column]) == char:
+                        print(myList[row + 1][column])
+                        switch = True 
+                        if str(myList[row + 1][column + 1]) == char:
+                            print(myList[row + 1][column + 1])
+                            switch = True
+                            break
+                        else: 
+                            switch = False
+                    else: 
+                        switch = False
+                else: 
+                    switch = False
+            else: 
+                switch = False
+    
+    return switch 
+
+myList = [[1,2,"a","a"], ["a", 3, "a", "a"], [1, 4, 6, 8], [5, 2, 6, 6]]
+char = "a"
+print(find_letter(myList, "a"))
+
+
+                
+                
 
 
 
+      
