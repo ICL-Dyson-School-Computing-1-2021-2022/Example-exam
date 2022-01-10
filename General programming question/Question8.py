@@ -47,49 +47,35 @@ or the program is largely incomplete.
 # in which case the function would return True, if the character was "a" and false otherwise.
 # weight = 15
 
-def find_letter(myList, char):
+import numpy as np
 
-    count = 0
-    for count,i in enumerate(myList): 
-        #print(i)
-        sublist = list(myList[count])
-        length = len(sublist)
+def find_letter(myList, character):
 
-        index = 0
-        for index,j in enumerate(sublist): 
-            #print(index, j)
-            if str(j) == char: 
-                row = count
-                column = index
-                if (column + 1) < length and str(myList[row][column + 1]) == char:
-                    print(myList[row][column + 1])
-                    switch = True 
-                    if (row + 1) < length and str(myList[row + 1][column]) == char:
-                        print(myList[row + 1][column])
-                        switch = True 
-                        if str(myList[row + 1][column + 1]) == char:
-                            print(myList[row + 1][column + 1])
-                            switch = True
-                            break
-                        else: 
-                            switch = False
-                    else: 
-                        switch = False
-                else: 
-                    switch = False
-            else: 
-                switch = False
+    flag = False
+
+    for index, row in enumerate(myList):
     
-    return switch 
 
-myList = [[1,2,"a","a"], ["a", 3, "a", "a"], [1, 4, 6, 8], [5, 2, 6, 6]]
-char = "a"
-print(find_letter(myList, "a"))
+        for count, element in enumerate(row, 1): # Remeber the count starts at 1: first element is 1 
+            
+            if element == "a" and count % 4 != 0:
+                myArray = np.array(myList)
+                if myArray[index, count] == "a":
+                    if myArray[index + 1, count - 1] == "a":
+                        if myArray[index + 1, count] == "a": 
+                            flag = True
+        
 
+
+    return flag
 
                 
-                
+myList = [[1, 2, "a", "a"], ["a", 3, "a", "a"], [1, 4, 6, 8], [5, 2, 6, 6]]               
 
+character = "a"
 
+print(find_letter(myList, character))
 
-      
+            
+            
+            
